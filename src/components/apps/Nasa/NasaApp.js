@@ -4,14 +4,15 @@ import GeolocationApp from '../Geolocation/GeolocationApp';
 const baseURL = 'https://api.nasa.gov/planetary/earth/imagery';
 const key = 'usSrucaaMXJk5NrQq1V8ea9BYWGn5rRYGOKvZCc6';
 
-const NasaApp = () => {
+const NasaApp = (props) => {
+    
     const [results, setResults] = useState([]);
 
     const fetchResults = () => {
         let url = `${baseURL}?lon=${''}&lat=${''}$api_key=${key}`;
 
         fetch(url)
-            .then(res => res.json())
+            .then(results => results.json())
             .then(data => setResults(data.response.docs))
             .catch(err => console.log(err));
     };

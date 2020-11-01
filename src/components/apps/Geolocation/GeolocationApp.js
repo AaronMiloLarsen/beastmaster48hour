@@ -1,20 +1,60 @@
-import React from 'react';
+import React, { useState } from "react";
 
-var x = document.getElementById("demo");
+const GeolocationApp = (props) => {
 
-{/* <button onclick="getLocation()">Try It</button> */}
+    const [latitude, setLatitude] = useState('')
+    const [longitude, setLongitude] = useState('')
 
-const GeolocationApp = () => {
+    let location = {
+        latitude: latitude,
+        longitude: longitude
+    };
+
+    const showLocation = (position) => {
+        setLatitude(position.coords.latitude)
+        setLongitude(position.coords.longitude)
+    };
+
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(showLocation);
     } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
+        console.log("Geolocation is not supported by this device.");
+    };
 }
 
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-        "<br>Longitude: " + position.coords.longitude;
-}
+// console.log(`Latitude is ${latitude}, and Longitude is ${longitude}.`)
 
 export default GeolocationApp;
+
+
+
+
+
+// const GeolocationApp = (props) => {
+
+//     // const [lat, setLat] = useState('')
+//     // const [long, setLong] = useState('')
+
+//     const latitude = position.coords.longitude;
+//     const longitude = position.coords.latitude;
+
+//     // const location = () => {
+//     //     setLat(position.coords.latitude)
+//     //     setLong(position.coords.longitude)
+//     // };
+
+//     const getLocation = () => {
+//         navigator.geolocation.getCurrentPosition((position) => {
+//             console.log("Latitude is :", props.position.coords.latitude);
+//             console.log("Longitude is :", props.position.coords.longitude);
+//         })
+//             // .then(res = res.json())
+//             .then(rObj => {
+//                 console.log(rObj)
+//                 getLocation()
+//                 // location()
+//                 props.location()
+//             })
+//     }
+// }
+
