@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Card, CardBody, CardDeck, CardFooter, CardImg, CardText, CardTitle } from 'reactstrap';
 
-import NasaApp from '../apps/NasaApp';
+import NasaApp from '../apps/Nasa/NasaApp';
 
 const Cards = () => {
     return (
