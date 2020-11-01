@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 import NasaResults from './NasaResults'
+import GeolocationApp from '../Geolocation/GeolocationApp';
 const baseURL = 'https://api.nasa.gov/planetary/earth/imagery';
 const key = 'usSrucaaMXJk5NrQq1V8ea9BYWGn5rRYGOKvZCc6';
 
-
-
-
 const NasaApp = () => {
-    const [lon, setLon] = useState('');
-    const [lat, setLat] = useState('');
     const [results, setResults] = useState([]);
 
     const fetchResults = () => {
-        let url = `${baseURL}?lon=${lon}&lat=${lat}$api_key=${key}`;
+        let url = `${baseURL}?lon=${''}&lat=${''}$api_key=${key}`;
 
         fetch(url)
             .then(res => res.json())
