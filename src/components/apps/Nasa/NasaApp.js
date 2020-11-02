@@ -1,40 +1,34 @@
-import React, { useState } from 'react';
-import GeolocationApp from '../Location/GeolocationApp';
+import React, { useEffect, useState } from 'react';
+
+const baseURL = 'https://api.nasa.gov/planetary/earth/imagery/';
+const key = 'JIccQU9CY3h69cCuHQHZMSTwVfQKugUJGmwGudEB';
 
 const NasaApp = (props) => {
+    const [nasaImage, setNasaImage] = useState('');
 
-    const [nasaResults, setNasaResults] = useState('');
+    useEffect(() => {
+        if (nasaImage) {
 
-    const baseURL = 'https://api.nasa.gov/planetary/earth/assets';
-    const key = 'JIccQU9CY3h69cCuHQHZMSTwVfQKugUJGmwGudEB';
-    
-    const fetchResults = () => {
-        // let url = `${baseURL} + '?lon=' + '02583039999999' + '&lat=' + '40.173567999999996' + '$api_key=' + ${key}`;
+            let url = `${baseURL}?lon=${props.long}&lat=${props.lat}$api_key=${key}`;
+            console.log(`This is the url: ${url}.`);
+            console.log(`The longitude is: ${props.long}.`);
+            console.log(`The latitude is: ${props.lat}.`);
 
-        let url = `${baseURL} + '?lon=' + ${props.long} + '&lat=' + ${props.lat} + '$api_key=' + ${key}`;
-        
-        console.log(url);
-
-        fetch(url)
-            .then(function (result) {
-                console.log(result)
-                return result.json();
-            })
-            .then(function (json) {
-                console.log(json);
-                setNasaResults(json);
-            })
-    };
-
-    fetchResults();
+            fetch(url)
+                .then(res => res.blob())
+                .then(blob => {
+                    let nasaImage = URL.createObjectURL(blob);
+                    setNasaImage(nasaImage);
+                })
+                .catch(err => console.log(err));
+        }
+    }, []);
 
     return (
-        <div className="main">
-            <div className="mainDiv">
-                <img src="null" alt="satellite"></img>
-            </div>
+        <div>
+            <img src="{nasaImage}" alt="satellite" height="200px" width="200px"></img>
         </div>
-    )
-}
+    );
+};
 
 export default NasaApp;
