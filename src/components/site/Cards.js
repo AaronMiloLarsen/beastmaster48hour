@@ -9,7 +9,7 @@ const Cards = (props) => {
             <CardDeck>
                 <Card>
                     <CardBody>
-                        <CardTitle>Nasa Location</CardTitle>
+                        <CardTitle>You Are Here</CardTitle>
                         <NasaApp lat={props.lat} long={props.long} />
                     </CardBody>
                     <CardFooter>
@@ -21,7 +21,7 @@ const Cards = (props) => {
                     <CardBody>
                         <CardTitle>Weather</CardTitle>
                         <CardText>
-                            This card has supporting text below as a natural lead-in to additional content.{' '}
+                            This card has supporting text below as a natural lead-in to additional content.
                         </CardText>
                     </CardBody>
                     <CardFooter>

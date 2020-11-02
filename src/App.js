@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
@@ -12,16 +12,16 @@ function App() {
   useEffect(() => Location())
 
   function Location() {
-      navigator.geolocation.getCurrentPosition((position) => {
-          setLat(position.coords.latitude);
-          setLong(position.coords.longitude);
-      });
-      console.log({ lat }, { long });
+    navigator.geolocation.getCurrentPosition((position) => {
+      setLat(position.coords.latitude);
+      setLong(position.coords.longitude);
+    });
+    console.log({ lat }, { long });
   }
 
   return (
     <div className="App">
-      <Cards lat={lat} long={long}/>
+      <Cards lat={lat} long={long} />
     </div>
   );
 }
