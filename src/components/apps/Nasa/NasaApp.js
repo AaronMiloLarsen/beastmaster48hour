@@ -6,10 +6,10 @@ const NasaApp = (props) => {
     const key = 'CoHRP5CgzAyE4Kt6UcR8VA6giZhude7bLDCwUVpS';
     const url = `${baseURL}?lon=${props.long}&lat=${props.lat}&api_key=${key}`;
 
-    fetch(url)
+    fetch(url) 
         .then((res) => res.json())
         .catch(err => console.log(err));
-
+    
         console.log(`This is the url: ${url}.`);
         console.log(`The longitude is: ${props.long}.`);
         console.log(`The latitude is: ${props.lat}.`);

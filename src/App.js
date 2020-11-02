@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 import Cards from './components/site/Cards';
+import Banner from './components/site/Banner';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <div className="App">
+      <Banner />
       <Cards lat={lat} long={long} />
     </div>
   );
