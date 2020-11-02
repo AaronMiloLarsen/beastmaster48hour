@@ -3,7 +3,7 @@ import { Card, CardBody, CardDeck, CardFooter, CardImg, CardText, CardTitle } fr
 
 import NasaApp from '../apps/Nasa/NasaApp';
 
-const Cards = () => {
+const Cards = (props) => {
     return (
         <div classname="carddeck">
             <CardDeck>
@@ -14,7 +14,7 @@ const Cards = () => {
                         <CardText>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in facilisis libero, eget congue lorem. Nulla non ligula eget erat aliquam lacinia a eget felis.
                         </CardText>
-                        <NasaApp />
+                        <NasaApp lat={props.lat} long={props.long}/>
                     </CardBody>
                     <CardFooter>
                         <small className="text-muted">Last updated 3 mins ago</small>
