@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const NasaApp = (props) => {
 
     const baseURL = 'https://api.nasa.gov/planetary/earth/imagery';
-    const key = 'CoHRP5CgzAyE4Kt6UcR8VA6giZhude7bLDCwUVpS';
+    const key = 'PIMTRqsKNvZj2rk5J5iWuDP6QGg5pjOnpOpkazis';
     const url = `${baseURL}?lon=${props.long}&lat=${props.lat}&api_key=${key}`;
 
     const [nasaImage, setNasaImage] = useState('');

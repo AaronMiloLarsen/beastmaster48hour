@@ -2,7 +2,6 @@ import React from "react";
 import { Card, CardBody, CardDeck, CardFooter, CardText, CardTitle } from 'reactstrap';
 
 import NasaApp from '../apps/Nasa/NasaApp';
-import WeatherApp from '../apps/Weather/WeatherApp';
 
 const Cards = (props) => {
     return (
@@ -24,7 +23,7 @@ const Cards = (props) => {
                         <CardText>
                             Sarah's weather will go here.
                         </CardText>
-                        <WeatherApp lat={props.lat} long={props.long} />
+
                     </CardBody>
                     <CardFooter className="cardFooter">
                         <small className="text-muted"></small>
