@@ -1,5 +1,7 @@
 import React from 'react'
 import { Jumbotron } from 'reactstrap'
+import Location from '../apps/Location'
+
 
 const Banner = (props) => {
 
@@ -10,8 +12,8 @@ const Banner = (props) => {
                 <h1 className="display-3">Welcome to the <br /> Beastmaster Project!</h1>
                 <p className="lead">Once you go beast you never go back!</p>
 
-                <h5>Latitude: {props.lat}</h5>
-                <h5>Longitude: {props.long}</h5>
+                <Location lat={props.lat} long={props.long} />
+
             </Jumbotron>
 
         </div>

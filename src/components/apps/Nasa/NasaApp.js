@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const NasaApp = (props) => {
 
@@ -6,17 +6,26 @@ const NasaApp = (props) => {
     const key = 'CoHRP5CgzAyE4Kt6UcR8VA6giZhude7bLDCwUVpS';
     const url = `${baseURL}?lon=${props.long}&lat=${props.lat}&api_key=${key}`;
 
-    fetch(url) 
+    const [nasaImage, setNasaImage] = useState('');
+
+    fetch(url)
         .then((res) => res.json())
+        .then((json) => setNasaImage(json.main))
         .catch(err => console.log(err));
-    
-        console.log(`This is the url: ${url}.`);
-        console.log(`The longitude is: ${props.long}.`);
-        console.log(`The latitude is: ${props.lat}.`);
+
+    console.log(nasaImage);
+    console.log(`This is the url: ${url}.`);
+    console.log(`The longitude is: ${props.long}.`);
+    console.log(`The latitude is: ${props.lat}.`);
+
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    };
 
     return (
         <div>
-           <img src={url} alt="satellite" height="150px" width="150px" />
+            <img onLoadStart={(e) => handleSubmit(e)} src={url} alt="satellite" height="150px" width="150px" />
         </div>
     )
 }
