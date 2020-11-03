@@ -8,7 +8,7 @@ const Banner = (props) => {
         <div>
 
         <Jumbotron>
-           
+       
         
         </Jumbotron>
 

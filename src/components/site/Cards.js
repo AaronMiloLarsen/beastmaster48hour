@@ -3,6 +3,7 @@ import { Card, CardBody, CardDeck, CardFooter, CardText, CardTitle } from 'react
 
 // import NasaApp from '../apps/Nasa/NasaApp';
 import WeatherApp from '../apps/Weather/WeatherApp'
+import WeatherDetails from '../apps/Weather/WeatherDetails'
 
 
 
@@ -12,7 +13,7 @@ const Cards = (props) => {
             <CardDeck>
                 <Card>
                     <CardBody>
-                        <CardTitle>Nasa Location</CardTitle>
+                        <CardTitle></CardTitle>
                        
                     </CardBody>
                     <CardFooter>
@@ -22,19 +23,22 @@ const Cards = (props) => {
                 <Card>
 
                     <CardBody>
-                        <CardTitle>Weather</CardTitle>
-                        <WeatherApp lat= {props.lat} long={props.long} />
+                        <center><CardTitle className="cardTitle">Weather</CardTitle></center>
+
+                        <center><WeatherDetails className="weatherDetails" lat= {props.lat} long={props.long} /></center>
+                        <center><WeatherApp lat= {props.lat} long={props.long} /></center>
                         <CardText>
+                        
                           
                         </CardText>
                     </CardBody>
-                    <CardFooter>
+                    <CardFooter className="cardFooter">
                         <small className="text-muted"></small>
                     </CardFooter>
                 </Card>
                 <Card>
                     <CardBody>
-                        <CardTitle>Zomato</CardTitle>
+                        <CardTitle></CardTitle>
                         <CardText>
                            
                         </CardText>

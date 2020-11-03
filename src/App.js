@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Cards from '../src/components/site/Cards';
 import Banner from '../src/components/site/Home/Banner';
-import WeatherApp from '../src/components/apps/Weather/WeatherApp';
+
 
 function App() {
 

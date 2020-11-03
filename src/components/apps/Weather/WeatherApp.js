@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import PropTypes from 'prop-types';
 
 
@@ -8,62 +8,47 @@ const WeatherApp = (props) => {
     const key = 'c570150f64f3e89bcc9f5861600d77b9'
     const url = `http://api.openweathermap.org/data/2.5/weather?lat=${props.lat}&lon=${props.long}&appid=${key}`
     const [weather, setWeather] = useState('');
+    
 
     fetch(url)
 
         .then((res) => res.json())
         .then((json) => setWeather(json.main.temp))
         .catch((err) => console.log(err));
-        console.log(weather); 
-        
-   
+        console.log(weather);
+
         /* When the input field receives input, convert the value from fahrenheit to celsius */
         const fahrenheit = Math.round((weather - 273.15)*1.8 + 32) ;
         const celcius = Math.round((weather - 273.15));
-
-        const [ color, setColor ] = useState('blue');
-        const [ display, setDisplay ] = useState('inline-block');
         const [ temp, setTemp ] = useState(fahrenheit);
-
+  
         let styles = {
-            color: color,
-            display : display,
             temp: temp
         };
+    
 // using a ternary operator to check what current value is, and setting it accordingly
-        const toggleColor = () => {
-            color === 'blue' ? setColor('orange') : setColor('blue');
-        }
-
         const toggleTemp = () => {
-            temp === fahrenheit ? setTemp(celcius) : setTemp(fahrenheit);
-
+            temp === (fahrenheit + '\u00B0 F') ? setTemp(celcius + '\u00B0 C') : setTemp(fahrenheit + '\u00B0 F');
         }
         return (
             <div className="main">
                 <div className="mainDiv">
                     <div style={styles}>
-                        <FunctionalComponent string={fahrenheit + '\u00B0 F'} function={toggleTemp} selectedStyle={ temp }/>
-
-                        {/* <FunctionalComponent string={celcius + '\u00B0 C'} function={toggleColor} /> */}
-
-                {/* <h2>{fahrenheit + '\u00B0 F'} fahrenheit
-                <br /> 
-                {celcius + '\u00B0 C'} celsius</h2> */}
-                
+                        <FunctionalComponent string= "" function={toggleTemp} selectedStyle={ temp }/>
                     </div>
                 </div>
             </div>
-        )
+            )
 }
 
 export default WeatherApp;
+
 
 const FunctionalComponent = (props) => {
     return (
         <div>
             <p>{props.string}</p>
-            <button onClick={props.function}>fahrenheit or celsius?</button>
+            <button className="weatherBtn" onClick={props.function}>Click Here</button>
             <TempChangeComponent selectedStyle={ props.selectedStyle } />
         </div>
     )
@@ -72,7 +57,8 @@ const FunctionalComponent = (props) => {
 const TempChangeComponent = (props) => {
     return (
         <div>
-            <p>The current temperature is : { props.selectedStyle }</p>
+            <p className="weatherDetails">The current temperature is : { props.selectedStyle }</p>
         </div>
     )
 }
+
