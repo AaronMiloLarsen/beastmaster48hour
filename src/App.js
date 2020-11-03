@@ -1,16 +1,18 @@
 import './App.css';
 import { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 import Cards from './components/site/Cards/Cards'
 import Banner from './components/site/Home/Banner'
-import Zomato from './components/apps/Zomato/Zomato'
+// import Zomato from './components/apps/Zomato/Zomato'
 
 function App() {
 
   const [lat, setLat] = useState('')
   const [long, setLong] = useState('')
 
-  useEffect(() => Location(),[])
+  Location();
   
   function Location() {
 
@@ -24,10 +26,8 @@ function App() {
   
   return (
     <div>
-    <p>Your coordinates are: Latitude: {lat} and Longitude: {long} </p>
     <Banner lat={lat} long={long}/>
-    <Cards />
-    <Zomato lat={lat} long={long}/>
+    <Cards lat={lat} long={long}/>
     </div>
   );
   }

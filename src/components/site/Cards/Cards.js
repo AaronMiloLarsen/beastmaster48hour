@@ -34,9 +34,7 @@ const Cards = (props) => {
                     <CardBody>
                         <CardTitle>Zomato</CardTitle>
                         <CardText>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to
-                            show that equal height action.
+                            <Zomato lat={props.lat} long={props.long} />
                         </CardText>
                     </CardBody>
                     <CardFooter>
