@@ -10,8 +10,9 @@ function App() {
   const [lat, setLat] = useState('')
   const [long, setLong] = useState('')
 
-  useEffect(() => Location(),[])
-  
+  // useEffect(() => Location(),[])
+  Location();
+
   function Location() {
 
     navigator.geolocation.getCurrentPosition((position) => {
