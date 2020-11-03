@@ -5,7 +5,7 @@ import './App.css';
 
 import Header from './components/site/Header';
 import Cards from './components/site/Cards';
-import Banner from './components/site/Home/Banner';
+import Banner from './components/site//Banner';
 import Footer from './components/site/Footer';
 
 
