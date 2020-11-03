@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
-import Cards from './components/site/Cards';
+import Header from './components/site/Header'
 import Banner from './components/site/Banner';
+import Cards from './components/site/Cards';
+import Footer from './components/site/Footer';
 
 function App() {
 
@@ -22,8 +24,10 @@ function App() {
 
   return (
     <div className="App">
-      <Banner />
-      <Cards lat={lat} long={long} />
+      <Header />
+        <Banner lat={lat} long={long} />
+        <Cards lat={lat} long={long} />
+      <Footer />
     </div>
   );
 }

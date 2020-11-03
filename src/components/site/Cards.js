@@ -9,35 +9,33 @@ const Cards = (props) => {
             <CardDeck>
                 <Card>
                     <CardBody>
-                        <CardTitle>You Are Here</CardTitle>
+                        <CardTitle className="cardTitle">You Are Here</CardTitle>
                         <NasaApp lat={props.lat} long={props.long} />
                     </CardBody>
-                    <CardFooter>
+                    <CardFooter className="cardFooter">
                         <small className="text-muted"></small>
                     </CardFooter>
                 </Card>
                 <Card>
 
                     <CardBody>
-                        <CardTitle>Weather</CardTitle>
+                        <CardTitle className="cardTitle">Weather</CardTitle>
                         <CardText>
-                            This card has supporting text below as a natural lead-in to additional content.
+                            Sarah's weather will go here.
                         </CardText>
                     </CardBody>
-                    <CardFooter>
+                    <CardFooter className="cardFooter">
                         <small className="text-muted"></small>
                     </CardFooter>
                 </Card>
                 <Card>
                     <CardBody>
-                        <CardTitle>Zomato</CardTitle>
+                        <CardTitle className="cardTitle">Zomato</CardTitle>
                         <CardText>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to
-                            show that equal height action.
+                            Aaron's restaraunts will go here.
                         </CardText>
                     </CardBody>
-                    <CardFooter>
+                    <CardFooter className="cardFooter">
                         <small className="text-muted"></small>
                     </CardFooter>
                 </Card>

@@ -17,3 +17,59 @@
   color: #61dafb;
 }
 
+/* HEADER */
+.header {
+  margin-top: 0.5em!important;
+  text-align: center;
+  background-color: #5c2c6d; 
+  color: white;
+}
+
+.header a {
+  color: white;
+}
+
+/* BODY */
+body {
+  padding: 15px;
+  background-color: #5da4a6;
+  /* color: red; */
+  font: Belleza;
+}
+
+/* BANNER */
+
+.display-3 {
+  font-family: 'Audiowide', cursive;
+  color: #5c2c6d;
+  text-shadow: 2px 2px;
+}
+
+.lead {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+}
+
+/* CARD DECK */
+
+.cardTitle {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+
+.cardFooter {
+  background-color: #d30cb8;
+}
+
+/* FOOTER */
+footer {
+  background-color: #3c345c; 
+  color: white;
+  margin-top: 20px;
+  font-style: bold;
+}
+
+footer  p {
+  margin-top: 0.8em!important;
+  margin-left: 1.5em;
+}
