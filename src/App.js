@@ -1,22 +1,22 @@
+
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Cards from '../src/components/site/Cards';
 import Banner from '../src/components/site/Home/Banner';
-
-
 import Header from './components/site/Header'
-import Banner from './components/site/Banner';
-import Cards from './components/site/Cards';
 import Footer from './components/site/Footer';
+
 
 function App() {
 
   const [lat, setLat] = useState('')
   const [long, setLong] = useState('')
 
-  // useEffect(() => Location(),[])
+
   Location();
+  
+
 
   function Location() {
 
@@ -29,6 +29,7 @@ function App() {
   }
   
   return (
+
     <div className="App">
       <Header />
         <Banner lat={lat} long={long} />
