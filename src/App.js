@@ -5,6 +5,11 @@ import Cards from '../src/components/site/Cards';
 import Banner from '../src/components/site/Home/Banner';
 
 
+import Header from './components/site/Header'
+import Banner from './components/site/Banner';
+import Cards from './components/site/Cards';
+import Footer from './components/site/Footer';
+
 function App() {
 
   const [lat, setLat] = useState('')
@@ -24,12 +29,11 @@ function App() {
   }
   
   return (
-    <div>
-   
-    <Banner />
-  
-    <Cards lat={lat} long={long} />
-    
+    <div className="App">
+      <Header />
+        <Banner lat={lat} long={long} />
+        <Cards lat={lat} long={long} />
+      <Footer />
     </div>
   );
   }

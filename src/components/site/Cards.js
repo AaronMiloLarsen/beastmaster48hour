@@ -1,11 +1,10 @@
 import React from "react";
 import { Card, CardBody, CardDeck, CardFooter, CardText, CardTitle } from 'reactstrap';
 
-// import NasaApp from '../apps/Nasa/NasaApp';
+
 import WeatherApp from '../apps/Weather/WeatherApp'
 import WeatherDetails from '../apps/Weather/WeatherDetails'
-
-
+import NasaApp from '../apps/Nasa/NasaApp';
 
 
 const Cards = (props) => {
@@ -14,24 +13,27 @@ const Cards = (props) => {
             <CardDeck>
                 <Card>
                     <CardBody>
-                        <CardTitle></CardTitle>
-                       
+                 
+                        <CardTitle className="cardTitle">You Are Here</CardTitle>
+                        <NasaApp lat={props.lat} long={props.long} />
                     </CardBody>
-                    <CardFooter>
+                    <CardFooter className="cardFooter">
+
                         <small className="text-muted"></small>
                     </CardFooter>
                 </Card>
                 <Card>
 
                     <CardBody>
+
                         <center><CardTitle className="cardTitle">Weather</CardTitle></center>
 
                         <center><WeatherDetails className="weatherDetails" lat= {props.lat} long={props.long} /></center>
                         <center><WeatherApp lat= {props.lat} long={props.long} /></center>
                         <CardText>
-                        
                           
                         </CardText>
+
                     </CardBody>
                     <CardFooter className="cardFooter">
                         <small className="text-muted"></small>
@@ -39,12 +41,14 @@ const Cards = (props) => {
                 </Card>
                 <Card>
                     <CardBody>
-                        <CardTitle></CardTitle>
+
+                        <CardTitle className="cardTitle">Zomato</CardTitle>
                         <CardText>
-                          
+                            Aaron's restaraunts will go here.
                         </CardText>
                     </CardBody>
-                    <CardFooter>
+                    <CardFooter className="cardFooter">
+
                         <small className="text-muted"></small>
                     </CardFooter>
                 </Card>
