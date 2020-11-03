@@ -25,8 +25,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-        <Banner lat={lat} long={long} />
-        <Cards lat={lat} long={long} />
+      <Banner lat={lat} long={long} />
+      <Cards lat={lat} long={long} />
       <Footer />
     </div>
   );
